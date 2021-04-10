@@ -1,6 +1,17 @@
   
 <div *ngIf="dataLoaded == false" class="spinner-border text-primary" role="status">
 </div>
+
+<div class="mb-3">
+  <label for="filterText" class="form-label">Araba Ara</label>
+  <input type="text" [(ngModel)] = "filterText" class="form-control" 
+  id="filterText" placeholder="arama ifadesi giriniz">
+</div>
+
+<div *ngIf="filterText" class="alert alert-warning">
+  {{filterText}} aradınız.
+</div>
+
 <table *ngIf="dataLoaded != false" class="table">
 <thead>
   <tr>
@@ -13,12 +24,12 @@
 </thead>
 <tr (click) = setCurrentCar(car)
 routerLink = "/cars/cardetail/{{car.carId}}"
- *ngFor="let car of cars">
+ *ngFor="let car of cars | filterCarPipe:filterText">
   <td>{{ car.brandName }}</td>
   <td>{{ car.colorName }}</td>
   <td>{{ car.modelYear }}</td>
   <td>{{ car.dailyPrice }}</td>
-  <td>{{ car.carName }}</td>
+  <td>{{ car.carName | uppercase}}</td>
   
 </tr>
 

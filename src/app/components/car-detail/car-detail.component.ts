@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/carImage';
 import { CarImageService } from 'src/app/services/car-image.service';
@@ -20,7 +21,8 @@ export class CarDetailComponent implements OnInit {
 
   constructor(private carService: CarService,
     private carImageService:CarImageService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -53,5 +55,9 @@ export class CarDetailComponent implements OnInit {
       return "carousel-item";
     }
   } 
+
+  rentCar(car:Car){
+      this.toastrService.success("Kiralama ekranına yönlendiriliyor.",car.carName)
+  }
 
 }
