@@ -16,8 +16,11 @@ import { RentalComponent } from './components/rental/rental.component';
 import { FilterCarPipePipe } from './pipes/filter-car-pipe.pipe';
 import { FilterColorPipePipe } from './pipes/filter-color-pipe.pipe';
 import { FilterBrandPipePipe } from './pipes/filter-brand-pipe.pipe';
+import { CarFilterComponent } from './components/car-filter/car-filter.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
-import {ToastrModule} from "ngx-toastr"
+import {ToastrModule} from "ngx-toastr";
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,13 +34,16 @@ import {ToastrModule} from "ngx-toastr"
     RentalComponent,
     FilterCarPipePipe,
     FilterColorPipePipe,
-    FilterBrandPipePipe
+    FilterBrandPipePipe,
+    CarFilterComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"

@@ -1,4 +1,4 @@
-<table class="table">
+<!--<table class="table">
     <thead>
       <tr>
         <th>Marka</th>
@@ -15,4 +15,40 @@
       
     </tr>
     
-    </table>
+  </table>-->
+  
+  <div class="card" style="width: 100%; height: 25rem;">
+    <div style="background-color:#ffc107; height: 1rem;" class="card-header"> </div>
+    <div class="card-body">
+      <div style="margin-bottom: 1rem;">
+        <label>Başlagıç Tarihi</label>
+        <input min="{{ getDate(1) }}" value="{{ getDate(1) }}"  [(ngModel)]="rentDate" type="date" class="form-control">
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <label>Bitiş Tarihi</label>
+        <input min="{{ getDate(2) }}" value="{{ getDate(2) }}"
+        [(ngModel)]="returnDate" type="date" class="form-control">
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <label>Müşteri Adı</label>
+        <select class="form-select" 
+             [(ngModel)]="customerId" aria-label="Default select example">
+          <option *ngFor="let customer of customers" [value]="customer.customerId" [value]="customer.customerId">{{customer.customerId}}</option>     
+        </select>
+      </div>
+      <div  style="margin-bottom: 1rem;" >
+        <button
+       
+        (click)="addRental()"
+        style="background-color: #ffc107;width: 100%; " 
+        type="button"
+        
+       >
+         Kirala
+      </button>
+      </div>
+    </div>
+    <div style="background-color:#ffc107 ; height: 3rem;" class="card-footer"> </div>
+  </div>
+
+  

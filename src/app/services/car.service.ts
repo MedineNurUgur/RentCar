@@ -29,7 +29,12 @@ export class CarService {
   }
 
   getCarDetails(carId:number): Observable<oneDataResponseModel<Car>> {
-    let newPath = this.apiUrl + "cars/getbyidwithdetails?carId=" + carId;
+    let newPath = this.apiUrl + "cars/getbyidwithdetails?carId=" + carId ;
     return this.httpClient.get<oneDataResponseModel<Car>>(newPath);
+  }
+
+  getCarsByFilter(brandId:number, colorId:number){
+    let newPath = this.apiUrl + "cars/getbyidwithdetails?colorId=" + colorId + "&brandId=" + brandId;
+    return this.httpClient.get<ListResponseModel<Car>>(newPath);
   }
 }

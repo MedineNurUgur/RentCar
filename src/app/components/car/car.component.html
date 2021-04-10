@@ -2,6 +2,8 @@
 <div *ngIf="dataLoaded == false" class="spinner-border text-primary" role="status">
 </div>
 
+<app-car-filter></app-car-filter>
+
 <div class="mb-3">
   <label for="filterText" class="form-label">Araba Ara</label>
   <input type="text" [(ngModel)] = "filterText" class="form-control" 
