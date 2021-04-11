@@ -11,6 +11,7 @@ import { CustomerService } from 'src/app/services/customer.service';
 import { Observable } from 'rxjs';
 import { Car } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
+import { CarDetail } from 'src/app/models/carDetail';
 
 @Component({
   selector: 'app-payment',
@@ -21,7 +22,7 @@ export class PaymentComponent implements OnInit {
   accountForm: FormGroup;
   rental: Rental;
   customer: Customer;
-  carDetail: Car;
+  carDetail: CarDetail;
   customerId: number;
   account: Account[]=[];
   card: Account;

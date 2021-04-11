@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
+import { CarDetail } from 'src/app/models/carDetail';
 import { CarImage } from 'src/app/models/carImage';
 import { CarImageService } from 'src/app/services/car-image.service';
 import { CarService } from 'src/app/services/car.service';
@@ -14,7 +15,7 @@ import { CarService } from 'src/app/services/car.service';
 export class CarDetailComponent implements OnInit {
   
   carImages: CarImage[] = [];
-  car: Car;
+  car: CarDetail;
   dataLoaded = false;
   currentImage:CarImage;
   apiUrl="https://localhost:44337"
@@ -57,7 +58,7 @@ export class CarDetailComponent implements OnInit {
     }
   } 
 
-  rentCar(car:Car){
+  rentCar(car:CarDetail){
       this.router.navigate(['/rental/', car.carId ]);
       this.toastrService.success("Kiralama ekranına yönlendiriliyor.",car.carName)
   }

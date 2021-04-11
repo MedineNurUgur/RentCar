@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from "@angular/forms"
+import {FormsModule, ReactiveFormsModule} from "@angular/forms"
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,9 +18,12 @@ import { FilterColorPipePipe } from './pipes/filter-color-pipe.pipe';
 import { FilterBrandPipePipe } from './pipes/filter-brand-pipe.pipe';
 import { CarFilterComponent } from './components/car-filter/car-filter.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
+
 
 import {ToastrModule} from "ngx-toastr";
-import { ReactiveFormsModule } from '@angular/forms';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     FilterColorPipePipe,
     FilterBrandPipePipe,
     CarFilterComponent,
-    PaymentComponent
+    PaymentComponent,
+    CarAddComponent,
+    BrandAddComponent,
+    ColorAddComponent
   ],
   imports: [
     BrowserModule,
